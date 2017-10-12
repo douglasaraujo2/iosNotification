@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     //MARK: - Super Methods -
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notification:)), name: NSNotification.Name(rawValue:"Received"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +46,12 @@ class ViewController: UIViewController {
         
         
     }
-    
+    func onReceive(notification: Notification){
+        if let message = notification.object as? String {
+            lbMessage.text = message
+        }
+    }
+
 
 }
 

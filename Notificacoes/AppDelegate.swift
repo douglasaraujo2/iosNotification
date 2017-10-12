@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var center = UNUserNotificationCenter.current()
-
+    var mensagem: String!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -34,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let confirmAction = UNNotificationAction(identifier: "confirm", title: "Confirmar 👍🏻", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "cancel", title: "Cancelar 👎🏻", options: [])
+        let category = UNNotificationCategory(identifier: "Lembrete", actions: [confirmAction, cancelAction], intentIdentifiers: [], options: [])
+        center.setNotificationCategories([category])
         
         return true
     }
@@ -71,6 +76,19 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         //Recebeu com app aberto
         print("didReceive response")
+        
+        mensagem = response.notification.request.content.body
+        
+        switch response.actionIdentifier {
+        case "confirm":
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Received"), object: mensagem, userInfo: nil)
+        case "cancel":
+            print("Cancel")
+        default:
+            print("Notificação")
+        }
+        
+        
         completionHandler()
     }
 }
