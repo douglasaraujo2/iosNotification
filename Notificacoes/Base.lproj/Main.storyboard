@@ -45,14 +45,16 @@
                                     <!--2017-10-12 01:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="...." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQP-ug-DuY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQP-ug-DuY">
                                 <rect key="frame" x="156" y="416" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPa-PV-lpw">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPa-PV-lpw">
                                 <rect key="frame" x="36" y="353" width="303" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Enviar Notificação"/>
                                 <connections>
                                     <action selector="fireNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnL-Ni-0N3"/>
@@ -60,11 +62,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="oQP-ug-DuY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3X9-0W-qBJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oQP-ug-DuY" secondAttribute="trailing" id="N5w-LA-826"/>
-                            <constraint firstItem="oQP-ug-DuY" firstAttribute="top" secondItem="JPa-PV-lpw" secondAttribute="bottom" constant="40" id="oZj-BJ-gbe"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Central de Notificações" id="cn4-Pe-Lvz">
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="yX9-Wr-vBg">
